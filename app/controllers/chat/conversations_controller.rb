@@ -22,7 +22,7 @@ module Chat
 
     def create
       #текущий диалог
-      @conversation = Chat::Conversation.get(current_user_chat.id, params[:user_id])
+      @conversation = Chat::Conversation.get(chat.current_user_chat.id, params[:user_id])
       #его сообщения
       @messages = Chat::Message.all.where(conversation_id: @conversation.id)
       #собеседник
