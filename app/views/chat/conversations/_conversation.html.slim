@@ -1,12 +1,12 @@
 li
-  .panel.panel-default data-conversation-id="#{chat.conversation.id}"
+  .panel.panel-default data-conversation-id="#{conversation.id}"
     .panel-heading
-      = link_to chat.conversation.opposed_user(user).user_name, '', class: 'toggle-window'
-      = link_to 'x', chat.close_conversation_path(conversation), class: 'btn btn-default btn-xs pull-right', remote: true, method: :post
+      = link_to conversation.opposed_user(user).user_name, '', class: 'toggle-window'
+      = link_to 'x', close_conversation_path(conversation), class: 'btn btn-default btn-xs pull-right', remote: true, method: :post
     .panel-body style=('display: none;')
       .messages-list
         ul
-          - chat.conversation.messages.each do |message|
+          - conversation.messages.each do |message|
             //= render message, user: user
             li
               .row
@@ -16,7 +16,7 @@ li
                   = message.body
 
       form.new_message
-        input name="conversation_id" type="hidden" value="#{chat.conversation.id}"
+        input name="conversation_id" type="hidden" value="#{conversation.id}"
         input name="user_id" type="hidden" value="#{user.id}"
         textarea.form-control name="body"
         input.btn.btn-success type="submit" value="Отправить"

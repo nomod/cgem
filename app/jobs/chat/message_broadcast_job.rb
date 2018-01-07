@@ -15,6 +15,9 @@ module Chat
     private
 
     def broadcast_to_sender(user, message)
+
+      puts "start broadcast_to_sender"
+
       ActionCable.server.broadcast(
           "conversations-#{user.id}",
           message: render_message(message, user),
@@ -23,6 +26,9 @@ module Chat
     end
 
     def broadcast_to_recipient(user, message)
+
+      puts "start broadcast_to_recipient"
+
       ActionCable.server.broadcast(
           "conversations-#{user.id}",
           window: render_window(message.conversation, user),
