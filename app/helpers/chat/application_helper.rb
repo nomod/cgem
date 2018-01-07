@@ -50,7 +50,7 @@ module Chat
 
     end
 
-    def chat.current_user_chat
+    def current_user_chat
       #поиск текущего пользователя в базе
       #выдергиваем из куки токен, шифруем его и ищем такой же в базе
       #to_s - нужен, если куки пустые
