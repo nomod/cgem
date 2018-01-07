@@ -1,6 +1,11 @@
-ul {
+.panel-body ul {
   padding-left: 0px;
   list-style: none;
+  font-size: 14px;
+  margin: 0px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  line-height: 1.428571429;
 }
 .messages-list {
   max-height: 440px;
