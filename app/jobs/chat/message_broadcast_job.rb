@@ -38,6 +38,9 @@ module Chat
     end
 
     def render_message(message, user)
+
+      puts "start render_message"
+
       ApplicationController.render(
           partial: 'chat/messages/message',
           locals: { message: message, user: user }
@@ -45,6 +48,9 @@ module Chat
     end
 
     def render_window(conversation, user)
+
+      puts "start render_window"
+
       ApplicationController.render(
           partial: 'chat/conversations/conversation',
           locals: { conversation: conversation, user: user }
