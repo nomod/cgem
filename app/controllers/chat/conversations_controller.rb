@@ -22,11 +22,11 @@ module Chat
 
     def create
       #текущий диалог
-      @conversation = Chat::Conversation.get(check_session.id, params[:user_id])
+      @conversation = Chat::Conversation.get(current_user_chat.id, params[:user_id])
       #его сообщения
       @messages = Chat::Message.all.where(conversation_id: @conversation.id)
       #собеседник
-      @opp_user = @conversation.opposed_user(check_session)
+      @opp_user = @conversation.opposed_user(current_user_chat)
 
       #add_to_conversations unless conversated?
 
@@ -35,7 +35,7 @@ module Chat
       end
 
       respond_to do |format|
-        format.json { render json: {conversation: @conversation, user: check_session, messages: @messages, opposed_user: @opp_user} }
+        format.json { render json: {conversation: @conversation, user: current_user_chat, messages: @messages, opposed_user: @opp_user} }
       end
     end
 
