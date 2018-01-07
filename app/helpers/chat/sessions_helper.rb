@@ -8,9 +8,9 @@ module Chat
       @current_user_chat = Chat::User.find_by(chat_token: remember_token_from_cookies)
 
       #если есть, удаляем его
-      if @current_user_chat
-        @current_user_chat.destroy
-      end
+      # if @current_user_chat
+      #   @current_user_chat.destroy
+      # end
 
       #авторизуемся
       remember_token = SecureRandom.urlsafe_base64
