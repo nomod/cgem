@@ -3,7 +3,7 @@
 .header-h1 Регистрация пользователя
 p
 
-  form.new_user action="/users" accept-charset="UTF-8" method="post"
+  form.new_user action=Chat::"/users" accept-charset="UTF-8" method="post"
     input name="utf8" type="hidden" value="✓"
     input name="authenticity_token" type="hidden" authenticity_token = "true"
     input name="user_name" type="text" placeholder = "Имя*" required = "true"
