@@ -12,7 +12,7 @@ $(document).ready(function() {
                 "<div class='panel panel-default' data-conversation-id='"+data.conversation.id+"'>"+
                 "<div class='panel-heading'>"+
                 "<a class='toggle-window' href=''>"+data.opposed_user.user_name+"</a>"+
-                "<a class='btn btn-default btn-xs pull-right' data-remote='true' rel='nofollow' data-method='post' href='/conversations/"+data.conversation.id+"/chat/close'>x</a>"+
+                "<a class='btn btn-default btn-xs pull-right' data-remote='true' rel='nofollow' data-method='post' href='/chat/conversations/"+data.conversation.id+"/close'>x</a>"+
                 "</div>"+
                 "<div class='panel-body' style=''>"+
                 "<div class='messages-list'>"+
