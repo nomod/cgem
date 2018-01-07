@@ -1,7 +1,6 @@
 module Chat
   module ApplicationHelper
 
-
     def conversations
 
       #если переменной session[:conversations] не присвоено значение, т.е. она равна nil или false, то нужно присвоить ей [], в противном случае, если у нее есть значение, ничего делать не нужно.
@@ -20,11 +19,6 @@ module Chat
     def users_online
       @users = Chat::User.online.where.not(operator: true)
     end
-
-
-
-
-
 
     def sign_in(user, operator)
 
@@ -79,11 +73,6 @@ module Chat
     def admin?
       current_user_chat.admin?
     end
-
-
-
-
-
 
   end
 end

@@ -8,8 +8,6 @@ module Chat
 
     #after_action :welcome
 
-    # include SessionsHelper
-    # include BasicHelper
     include ApplicationHelper
 
     private
