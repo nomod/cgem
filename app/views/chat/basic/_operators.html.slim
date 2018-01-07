@@ -2,7 +2,7 @@
   .chatroom
     ul#conversations-list
       - conversations.each do |conversation|
-        = render 'chat/conversations/conversation', conversation: conversation, user: current_user_chat
+        = render 'chat/conversations/conversation', conversation: conversation, user: chat.current_user_chat
 
   - if !current_user_chat.nil?
     - if !current_user_chat.operator?
