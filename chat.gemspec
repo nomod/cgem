@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Chat::VERSION
   s.authors     = ["nomod"]
   s.email       = ["m.ryadn@gmail.com"]
-  s.homepage    = "https://github.com/nomod/gemchat"
+  s.homepage    = "https://github.com/nomod/cgem"
   s.summary     = "A simple rails chat gem that leverages ActionCable"
   s.description = "Denis gem."
   s.license     = "MIT"
