@@ -46,7 +46,7 @@ In application.html.slim:
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'chat', git: 'https://github.com/nomod/gemchat'
+gem 'chat', git: 'https://github.com/nomod/cgem'
 ```
 
 And then execute:
