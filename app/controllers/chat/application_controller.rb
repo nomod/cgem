@@ -1,7 +1,7 @@
 module Chat
   class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
-	
+
     before_action :check_session
     before_action :user_activity
     #before_action :current_url
