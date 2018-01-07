@@ -2,8 +2,6 @@ Chat::Engine.routes.draw do
 
   #root 'home#index'
 
-  #регистрация
-  get '/operator_signup',  to: 'users#new'
   #вход
   get '/operator_signin',  to: 'sessions#new'
   #выход
@@ -12,6 +10,9 @@ Chat::Engine.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :operators
   resources :users
+
+  #регистрация
+  get '/operator_signup',  to: 'users#new'
 
   resources :dialogs
   resources :quick_phrases
