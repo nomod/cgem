@@ -1,14 +1,18 @@
 li
+  - puts "conversation start"
   .panel.panel-default data-conversation-id="#{conversation.id}"
     .panel-heading
-      - puts "conversation"
-      - puts "conversation.user"
+      - puts "conversation end"
+      - puts "conversation.user start"
       = link_to conversation.opposed_user(user).user_name, '', class: 'toggle-window'
+      - puts "conversation.user end"
+      - puts "close_conversation_path start"
       = link_to 'x', close_conversation_path(conversation), class: 'btn btn-default btn-xs pull-right', remote: true, method: :post
+      - puts "close_conversation_path end"
     .panel-body style=('display: none;')
       .messages-list
         ul
-          - puts "conversation.messages"
+          - puts "conversation.messages start"
           - conversation.messages.each do |message|
             //= render message, user: user
             li
@@ -17,6 +21,7 @@ li
                 /  = user.id == message.user_id ? conversation.sender.user_name : conversation.recipient.user_name
                 .div class ="#{user.id == message.user_id ? 'message-sent' : 'message-received'}"
                   = message.body
+                  - puts "conversation.messages end"
 
       form.new_message
         input name="conversation_id" type="hidden" value="#{conversation.id}"
