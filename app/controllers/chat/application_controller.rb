@@ -10,7 +10,6 @@ module Chat
 
     include SessionsHelper
     include BasicHelper
-    #include ApplicationHelper
 
     private
 
