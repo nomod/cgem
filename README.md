@@ -33,6 +33,7 @@ In ApplicationController:
 
       helper Chat::Engine.helpers
       before_action :check_session
+      before_action :current_user_chat
     
 In routes:
     
