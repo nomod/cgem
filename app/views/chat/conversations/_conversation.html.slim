@@ -1,0 +1,22 @@
+li
+  .panel.panel-default data-conversation-id="#{conversation.id}"
+    .panel-heading
+      = link_to conversation.opposed_user(user).user_name, '', class: 'toggle-window'
+      = link_to 'x', close_conversation_path(conversation), class: 'btn btn-default btn-xs pull-right', remote: true, method: :post
+    .panel-body style=('display: none;')
+      .messages-list
+        ul
+          - conversation.messages.each do |message|
+            //= render message, user: user
+            li
+              .row
+                /.div class ="#{user.id == message.user_id ? 'user-sent' : 'user-received'}"
+                /  = user.id == message.user_id ? conversation.sender.user_name : conversation.recipient.user_name
+                .div class ="#{user.id == message.user_id ? 'message-sent' : 'message-received'}"
+                  = message.body
+
+      form.new_message
+        input name="conversation_id" type="hidden" value="#{conversation.id}"
+        input name="user_id" type="hidden" value="#{user.id}"
+        textarea.form-control name="body"
+        input.btn.btn-success type="submit" value="Отправить"

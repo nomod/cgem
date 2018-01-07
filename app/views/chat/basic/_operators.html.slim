@@ -1,0 +1,39 @@
+.wrap
+  .chatroom
+    ul#conversations-list
+      - conversations.each do |conversation|
+        = render 'chat/conversations/conversation', conversation: conversation, user: current_user_chat
+
+  - if !current_user_chat.nil?
+    - if !current_user_chat.operator?
+      .chatroom_user
+        .panel.panel-primary
+          .panel-heading
+            h3.panel-title
+              | Операторы онлайн
+          .panel-body
+            ul
+              - all_operators.each do |operator|
+                li
+                  = link_to operator.user_name, chat.conversations_path(user_id: operator), remote: true, method: :post
+    - else
+      .chatroom_user
+        .panel.panel-primary
+          .panel-heading
+            h3.panel-title
+              | Пользователи онлайн
+          .panel-body
+            ul
+              - users_online.each do |user|
+                li
+                  = link_to user.user_name, chat.conversations_path(user_id: user), remote: true, method: :post
+
+
+      .quick_phrases
+        .panel.panel-primary
+          .panel-heading
+            h3.panel-title
+              = link_to 'Быстрые фразы', chat.quick_groups_path, remote: true, method: :post
+
+.quick_phrases_body
+  #select-quick-group

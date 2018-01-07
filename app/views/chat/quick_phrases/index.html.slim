@@ -1,0 +1,19 @@
+h1 Все фразы
+
+table.table.table-striped
+  thead
+    tr
+      th Фраза
+      th
+      th
+
+  tbody
+    - @phrases.each do |phrase|
+      tr
+        td = phrase.phrase
+        td = link_to 'Редактировать', edit_quick_phrase_path(phrase)
+        td = link_to 'Удалить', phrase, data: { confirm: 'Уверены?' }, method: :delete
+
+br
+
+= link_to 'Создать новую фразу', new_quick_phrase_path

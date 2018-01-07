@@ -1,0 +1,17 @@
+h1 Добавление новой фразы
+
+p
+  = form_for @new_phrase do |f|
+    - if @new_phrase.errors.any?
+      #error_explanation
+        h2 = 'Обратите внимания на следующие поля:'
+        ul
+          - @new_phrase.errors.full_messages.each do |message|
+            li = message
+    .form-block
+      .form
+        = f.text_area :phrase, placeholder: 'Фраза*', value: "#{@phrase}"
+      .form
+        = f.select :quick_group_id, options_from_collection_for_select(@groups, :id, :quick_group_name)
+      .form-btn
+        = f.submit('Добавить новую фразу', class: 'btn-primary', name: 'quick_phrase_btn')

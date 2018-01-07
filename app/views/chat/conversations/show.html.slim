@@ -1,0 +1,20 @@
+h1 Просмотр диалога ##{@conversation.id}
+
+
+.messages-list.look
+  ul
+    - @messages.each do |message|
+      li
+        .row
+         - if message.user_id == @conversation.sender.id
+           .user-sent
+              p = "#{@conversation.sender.user_name}:"
+              p = message.created_at.strftime('%d-%m-%Y %H:%M:%S')
+           .message-sent
+             = message.body
+         - else
+           .user-received
+             p  = "#{@conversation.recipient.user_name}:"
+             p = message.created_at.strftime('%d-%m-%Y %H:%M:%S')
+           .message-received
+             = message.body

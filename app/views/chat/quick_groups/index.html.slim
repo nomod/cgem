@@ -1,0 +1,19 @@
+h1 Все группы
+
+table.table.table-striped
+  thead
+    tr
+      th Группа
+      th
+      th
+
+  tbody
+    - @groups.each do |group|
+      tr
+        td = group.quick_group_name
+        td = link_to 'Редактировать', edit_quick_group_path(group)
+        td = link_to 'Удалить', group, data: { confirm: 'Уверены?' }, method: :delete
+
+br
+
+= link_to 'Создать новую группу', new_quick_group_path

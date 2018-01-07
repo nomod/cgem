@@ -1,0 +1,17 @@
+h1 Редактирование фразы
+
+p
+  = form_for @phrase do |f|
+    - if @phrase.errors.any?
+      #error_explanation
+        h2 = 'Обратите внимания на следующие поля:'
+        ul
+          - @phrase.errors.full_messages.each do |message|
+            li = message
+    .form-block
+      .form
+        = f.text_area :phrase, placeholder: 'Фраза*', value: "#{@phrase.phrase}"
+      .form
+        = f.select :quick_group_id, options_from_collection_for_select(@groups, :id, :quick_group_name)
+      .form-btn
+        = f.submit('Редактировать фразу', class: 'btn-primary')

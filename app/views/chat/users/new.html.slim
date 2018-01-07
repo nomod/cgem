@@ -1,0 +1,14 @@
+- @title = 'Страница регистрации'
+
+.header-h1 Регистрация пользователя
+p
+
+  form.new_user action="/chatusers" accept-charset="UTF-8" method="post"
+    input name="utf8" type="hidden" value="✓"
+    input name="authenticity_token" type="hidden" authenticity_token = "true"
+    input name="user_name" type="text" placeholder = "Имя*" required = "true"
+    input name="email" type="text" placeholder = "Электронная почта*" required = "true"
+    input name="password" type="password" placeholder = "Пароль*" required = "true"
+    input name="password_confirmation" type="password" placeholder = "Подтвердите пароль*" required = "true"
+
+    input.btn.btn-success type="submit" value="ЗАРЕГИСТРИРОВАТЬСЯ"

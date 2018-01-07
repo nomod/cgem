@@ -1,0 +1,15 @@
+h1 Редактирование группы
+
+p
+  = form_for @group do |f|
+    - if @group.errors.any?
+      #error_explanation
+        h2 = 'Обратите внимания на следующие поля:'
+        ul
+          - @group.errors.full_messages.each do |message|
+            li = message
+    .form-block
+      .form
+        = f.text_field :quick_group_name, placeholder: 'Название группы*', value: "#{@group.quick_group_name}"
+      .form-btn
+        = f.submit('Редактировать группу', class: 'btn-primary')

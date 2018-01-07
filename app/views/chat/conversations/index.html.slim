@@ -1,0 +1,16 @@
+h1 Все диалоги
+
+table.table.table-striped
+  thead
+    tr
+      th # диалога
+      th Инициатор
+      th Принимающий
+
+  tbody
+    - @сonversations.each do |сonversation|
+      tr
+        td = сonversation.id
+        td = сonversation.sender.user_name
+        td = сonversation.recipient.user_name
+        td = link_to 'Просмотр', сonversation
