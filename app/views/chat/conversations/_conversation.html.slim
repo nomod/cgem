@@ -12,10 +12,10 @@ li
               .row
                 - if user.id == message.user_id
                   .user-sent
-                    = conversation.user.user_name
+                    = user.user_name
                 - else
                   .user-received
-                    = conversation.opposed_user(user).user_name
+                    = opposed_user(user).user_name
                 .div class ="#{user.id == message.user_id ? 'message-sent' : 'message-received'}"
                   = message.body
 
