@@ -48,8 +48,8 @@ module Chat
 
 
     def online_info
-      @operators = Chat::Operator.joins(:user).where.not("chat_users.operator": false, "chat_operators.status": false).select("chat_users.user_name", "chat_users.id")
-      @users = Chat::User.online.where.not(operator: true)
+      @operators = Chat::Operator.joins(:user).where.not("chat_users.operator": false, "chat_operators.status": false).select("chat_users.user_name", "chat_users.id").pluck(:id)
+      @users = Chat::User.online.where.not(operator: true).pluck(:id)
       Chat::UserOnlineJob.perform_later(@operators, @users)
     end
 
