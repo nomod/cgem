@@ -6,7 +6,7 @@
 
   - if !current_user_chat.nil?
     - if !current_user_chat.operator?
-      - if !all_operators.nil?
+      - if !all_operators.blank?
         .chatroom_user
           .panel.panel-primary
             .panel-heading
