@@ -34,7 +34,7 @@ $(document).ready(function() {
                     box.append(
                         "<li>"+
                         "<div class='row'>"+
-                        //"<div class='user-sent'>"+data.user.user_name+":</div>"+
+                        "<div class='user-sent'>"+data.user.user_name+":</div>"+
                         "<div class='message-sent'>"+value.body+"</div>"+
                         "</div>"+
                         "</li>"
@@ -47,7 +47,7 @@ $(document).ready(function() {
                     box.append(
                         "<li>"+
                         "<div class='row'>"+
-                        //"<div class='user-received'>"+data.opposed_user.user_name+":</div>"+
+                        "<div class='user-received'>"+data.opposed_user.user_name+":</div>"+
                         "<div class='message-received'>"+value.body+"</div>"+
                         "</div>"+
                         "</li>"
