@@ -48,8 +48,9 @@ module Chat
 
 
     def online_info
-      puts "тест 1"
-      Chat::UserOnlineJob.perform_later(all_operators, users_online)
+      @operators = Chat::Operator.joins(:user).where.not("chat_users.operator": false, "chat_operators.status": false).select("chat_users.user_name", "chat_users.id")
+      @users = Chat::User.online.where.not(operator: true)
+      Chat::UserOnlineJob.perform_later(@operators, @users)
     end
 
     def current_url

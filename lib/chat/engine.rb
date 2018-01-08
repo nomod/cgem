@@ -51,7 +51,6 @@ module Chat
       end
 
       def online_info
-        puts "тест 1"
         Chat::UserOnlineJob.perform_later(all_operators, users_online)
       end
 
