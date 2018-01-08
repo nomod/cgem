@@ -16,6 +16,7 @@ module Chat
     private
 
     def broadcast_to_operators(operator, users)
+      puts "start broadcast_to_operators"
       ActionCable.server.broadcast(
           "conversations-#{operator.id}",
           users: render_users(users)
@@ -23,6 +24,7 @@ module Chat
     end
 
     def render_users(users)
+      puts "start render_users"
       ApplicationController.render(
           partial: 'chat/users/online',
           locals: { users: users }
