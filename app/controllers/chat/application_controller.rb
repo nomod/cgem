@@ -2,6 +2,8 @@ module Chat
 
   class ApplicationController < ActionController::Base
 
+    render :'layouts/application' => false
+
     protect_from_forgery with: :exception
 
     before_action :check_session
