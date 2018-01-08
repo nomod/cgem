@@ -1,8 +1,8 @@
 module Chat
 
   class ApplicationController < ActionController::Base
-
-    render :'layouts/application' => false
+    
+    layout 'layouts/application' => false
 
     protect_from_forgery with: :exception
 
