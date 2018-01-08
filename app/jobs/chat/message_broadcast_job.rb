@@ -20,7 +20,7 @@ module Chat
 
       ActionCable.server.broadcast(
           "conversations-#{user.id}",
-          message: render_message(message, user),
+          message: render_message(message, user, conversation: conversation),
           conversation_id: message.conversation_id
       )
     end
@@ -32,18 +32,18 @@ module Chat
       ActionCable.server.broadcast(
           "conversations-#{user.id}",
           window: render_window(message.conversation, user),
-          message: render_message(message, user),
+          message: render_message(message, user, conversation: conversation),
           conversation_id: message.conversation_id
       )
     end
 
-    def render_message(message, user)
+    def render_message(message, user, conversation)
 
       puts "start render_message"
 
       ApplicationController.render(
           partial: 'chat/messages/message',
-          locals: { message: message, user: user }
+          locals: { message: message, user: user, conversation: conversation}
       )
     end
 
