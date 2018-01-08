@@ -2,7 +2,7 @@ module Chat
 
   class ApplicationController < ActionController::Base
 
-    layout 'application' => false
+    #layout 'application' => false
 
     protect_from_forgery with: :exception
 
