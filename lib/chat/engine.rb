@@ -50,6 +50,13 @@ module Chat
         current_user_chat.touch
       end
 
+      def online_info
+        puts "тест 1"
+        if user_activity
+          Chat::UserOnlineJob.perform_later(all_operators, users_online)
+        end
+      end
+
     end
 
   end
