@@ -57,16 +57,16 @@
   bottom: 160px;
   width: 440px;
 }
-.panel-primary > .panel-heading {
+.chatroom_user .panel-primary > .panel-heading {
   color: #fff;
   background-color: #224b6f;
   border-color: #224b6f;
   text-align: center;
 }
-.panel-primary {
+.chatroom_user .panel-primary {
   border-color: white;
 }
-.panel {
+.chatroom_user .panel {
   margin-bottom: 20px;
   background-color: #90666624;
   border: 1px solid transparent;
@@ -74,34 +74,92 @@
   -webkit-box-shadow: 2px 3px 9px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 2px 3px 9px 0px rgba(0, 0, 0, 0.25);
 }
-.panel-body a {
+.chatroom_user .panel-body a {
   color: #020202;
   text-decoration: none;
   font-weight: bold;
 }
-.panel-default > .panel-heading {
+.chatroom_user .panel-default > .panel-heading {
   color: #ffffff;
   background-color: #224b6f;
   border-color: #224b6f;
 }
-.panel-heading a.toggle-window {
+.chatroom_user .panel-heading a.toggle-window {
   color: #fbfbfb;
   text-decoration: none;
   font-weight: bold;
 }
-.panel-heading {
+.chatroom_user .panel-heading {
   padding: 10px 15px;
   border-bottom: 1px solid transparent;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
-.btn-success {
+.chatroom_user .btn-success {
   color: #fff;
   background-color: #5cb85c;
   border-color: #4cae4c;
   margin-top: 10px;
 }
-.panel-success > .panel-heading {
+.chatroom_user .panel-success > .panel-heading {
+  color: #3c763d;
+  background-color: #a92f29;
+  border-color: #a92f29;
+}
+
+
+
+
+
+
+
+
+
+.quick_phrases .panel-primary > .panel-heading {
+  color: #fff;
+  background-color: #224b6f;
+  border-color: #224b6f;
+  text-align: center;
+}
+.quick_phrases .panel-primary {
+  border-color: white;
+}
+.quick_phrases .panel {
+  margin-bottom: 20px;
+  background-color: #90666624;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 3px 9px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 3px 9px 0px rgba(0, 0, 0, 0.25);
+}
+.quick_phrases .panel-body a {
+  color: #020202;
+  text-decoration: none;
+  font-weight: bold;
+}
+.quick_phrases .panel-default > .panel-heading {
+  color: #ffffff;
+  background-color: #224b6f;
+  border-color: #224b6f;
+}
+.quick_phrases .panel-heading a.toggle-window {
+  color: #fbfbfb;
+  text-decoration: none;
+  font-weight: bold;
+}
+.quick_phrases .panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.quick_phrases .btn-success {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  margin-top: 10px;
+}
+.quick_phrases .panel-success > .panel-heading {
   color: #3c763d;
   background-color: #a92f29;
   border-color: #a92f29;

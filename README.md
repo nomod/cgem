@@ -37,7 +37,7 @@ In ApplicationController:
     
 In routes:
     
-    mount Chat::Engine, at: ''
+    mount Chat::Engine, at: '/chat'
     
 In application.html.slim:
     
