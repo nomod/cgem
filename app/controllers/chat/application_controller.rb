@@ -11,6 +11,8 @@ module Chat
     include SessionsHelper
     include BasicHelper
 
+    render 'application'
+
     private
 
     def check_session
