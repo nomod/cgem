@@ -31,6 +31,12 @@ App.chat_conversation = App.cable.subscriptions.create("Chat::ConversationChanne
         var messages_list = conversation.find('.messages-list');
         var height = messages_list[0].scrollHeight;
         messages_list.scrollTop(height);
+
+
+
+        var user_online = $('.user_online');
+        user_online.find('ul').append(data['users']);
+
     },
     speak: function(message) {
         return this.perform('speak', {

@@ -34,6 +34,7 @@ $(document).ready(function() {
                     box.append(
                         "<li>"+
                         "<div class='row'>"+
+                        //"<div class='user-sent'>"+data.user.user_name+":</div>"+
                         "<div class='user-sent'>Вы:</div>"+
                         "<div class='message-sent'>"+value.body+"</div>"+
                         "</div>"+
