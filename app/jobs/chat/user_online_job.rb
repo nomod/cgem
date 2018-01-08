@@ -4,6 +4,7 @@ module Chat
     queue_as :default
 
     def perform(all_operators, users_online)
+      puts "start UserOnlineJob"
       @users = users_online
       @all_operators = all_operators
 
