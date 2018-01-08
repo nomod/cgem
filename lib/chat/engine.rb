@@ -51,16 +51,9 @@ module Chat
       end
 
       def online_info
+        @operators = Chat::Operator.joins(:user).where.not("chat_users.operator": false, "chat_operators.status": false).select("chat_users.user_name", "chat_users.id").pluck(:id)
+        @users = Chat::User.online.where.not(operator: true).pluck(:id)
         Chat::UserOnlineJob.perform_later(all_operators, users_online)
-      end
-
-      def all_operators
-        #выбираем только пользователей-операторов и только тех у кого статус онлайн
-        @operators = Chat::Operator.joins(:user).where.not("chat_users.operator": false, "chat_operators.status": false).select("chat_users.user_name", "chat_users.id")
-      end
-
-      def users_online
-        @users = Chat::User.online.where.not(operator: true)
       end
 
     end
