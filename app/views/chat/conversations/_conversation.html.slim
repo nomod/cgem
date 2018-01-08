@@ -11,7 +11,7 @@ li
               .row
                 - if user.id == message.user_id
                   .user-sent
-                    = "#{message.user.user_name}:"
+                    = 'Вы:'
                   .message-sent
                     = message.body
                 - else
