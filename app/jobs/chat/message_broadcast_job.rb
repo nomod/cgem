@@ -20,7 +20,7 @@ module Chat
 
       ActionCable.server.broadcast(
           "conversations-#{user.id}",
-          message: render_message(message, user, conversation: conversation),
+          message: render_message(message, user, conversation: message.conversation),
           conversation_id: message.conversation_id
       )
     end
@@ -32,7 +32,7 @@ module Chat
       ActionCable.server.broadcast(
           "conversations-#{user.id}",
           window: render_window(message.conversation, user),
-          message: render_message(message, user, conversation: conversation),
+          message: render_message(message, user, conversation: message.conversation),
           conversation_id: message.conversation_id
       )
     end
