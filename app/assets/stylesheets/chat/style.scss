@@ -248,10 +248,10 @@
   background-color: #ececec;
   padding: 20px;
   border-radius: 10px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
   width: 400px;
+  position: fixed;
+  bottom: 20px;
+  z-index: 1000;
 }
 .quick_phrases_body ul{
   list-style: none;
