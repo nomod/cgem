@@ -26,7 +26,7 @@
   position: relative;
   background-color: #9dd8f5;
   border-color: #9dd8f5;
-  margin: 5px 20px;
+  margin-right: 20px;
   padding: 10px;
   float: right;
   border-bottom-left-radius: 10px;
@@ -36,7 +36,7 @@
 .message-received {
   background-color: #ffffff;
   border-color: #e8e8e8;
-  margin: 5px 20px;
+  margin-left: 20px;
   padding: 10px;
   float: left;
   border-bottom-left-radius: 10px;
@@ -391,13 +391,13 @@ form.edit_quick_phrase, form.new_quick_phrase, form.edit_quick_group, form.new_q
 }
 .user-sent{
   text-align: right;
-  margin: 5px 20px;
-  padding: 10px;
+  margin-right: 10px;
+  padding-right: 10px;
   font-weight: bold;
 }
 .user-received{
   text-align: left;
-  margin: 5px 10px;
-  padding: 10px;
+  margin-left: 10px;
+  padding-left: 10px;
   font-weight: bold;
 }
