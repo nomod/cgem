@@ -11,8 +11,6 @@ module Chat
     include SessionsHelper
     include BasicHelper
 
-    layout false
-
     private
 
     def check_session
