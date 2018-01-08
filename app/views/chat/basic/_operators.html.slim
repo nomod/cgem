@@ -26,9 +26,10 @@
               | Пользователи онлайн
           .panel-body
             ul
+              - puts "проверка №2"
               - users_online.each do |user|
                 li
-                  - puts "тут юзеры"
+                  - puts "проверка №3"
                   = link_to user.user_name, chat.conversations_path(user_id: user), remote: true, method: :post
 
 
