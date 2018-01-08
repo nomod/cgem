@@ -43,11 +43,12 @@ module Chat
     end
 
     def user_activity
+      puts "тест 1"
       #обновляем поле updated_at в базе у юзера при активности
       current_user_chat.touch
-      puts "тест 1"
-      Chat::UserOnlineJob.perform_later(all_operators, users_online)
       puts "тест 2"
+      Chat::UserOnlineJob.perform_later(all_operators, users_online)
+      puts "тест 3"
     end
 
     def current_url
