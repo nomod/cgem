@@ -6,16 +6,17 @@
 
   - if !current_user_chat.nil?
     - if !current_user_chat.operator?
-      .chatroom_user
-        .panel.panel-primary
-          .panel-heading
-            h3.panel-title
-              | Операторы онлайн
-          .panel-body
-            ul
-              - all_operators.each do |operator|
-                li
-                  = link_to operator.user_name, chat.conversations_path(user_id: operator), remote: true, method: :post
+      - if all_operators
+        .chatroom_user
+          .panel.panel-primary
+            .panel-heading
+              h3.panel-title
+                | Операторы онлайн
+            .panel-body
+              ul
+                - all_operators.each do |operator|
+                  li
+                    = link_to operator.user_name, chat.conversations_path(user_id: operator), remote: true, method: :post
     - else
       .chatroom_user
         .panel.panel-primary
