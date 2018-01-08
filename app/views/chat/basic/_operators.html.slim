@@ -4,7 +4,6 @@
       - conversations.each do |conversation|
         = render 'chat/conversations/conversation', conversation: conversation, user: current_user_chat
 
-  - puts "проверка №1"
   - if !current_user_chat.nil?
     - if !current_user_chat.operator?
       - if !all_operators.blank?
@@ -26,11 +25,8 @@
               | Пользователи онлайн
           .panel-body
             ul
-              - puts "проверка №2"
-              - puts users_online
               - users_online.each do |user|
                 li
-                  - puts "проверка №3"
                   = link_to user.user_name, chat.conversations_path(user_id: user), remote: true, method: :post
 
 
