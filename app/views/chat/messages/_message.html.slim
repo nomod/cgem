@@ -1,11 +1,11 @@
 li
   .row
     - if user.id == message.user_id
-      .user-sent
+      /.user-sent
       .message-sent
         = message.body
     - else
-      .user-received
+      /.user-received
       .message-received
         = message.body
     /.div class ="#{user.id == message.user_id ? 'message-sent' : 'message-received'}"
