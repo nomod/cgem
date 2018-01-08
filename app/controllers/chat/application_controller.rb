@@ -6,7 +6,8 @@ module Chat
 
     protect_from_forgery with: :exception
 
-    before_action :check_session, :user_activity, :online_info
+    before_action :check_session, :user_activity
+    after_action :online_info
     #before_action :current_url
 
     #after_action :welcome
