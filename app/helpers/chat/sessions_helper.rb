@@ -7,11 +7,6 @@ module Chat
       remember_token_from_cookies = Digest::SHA1.hexdigest(cookies[:chat_token].to_s)
       @current_user_chat = Chat::User.find_by(chat_token: remember_token_from_cookies)
 
-      #если есть, удаляем его
-      # if @current_user_chat
-      #   @current_user_chat.destroy
-      # end
-
       #авторизуемся
       remember_token = SecureRandom.urlsafe_base64
       cookies.permanent[:chat_token] = remember_token
@@ -22,6 +17,11 @@ module Chat
       #Digest::SHA1.hexdigest - шифруем токен
       user.update_attribute(:chat_token, Digest::SHA1.hexdigest(remember_token))
       operator.update_attribute(:status, true)
+
+      #если есть ли куки от юзера не оператора, удаляем его
+      if @current_user_chat
+        @current_user_chat.destroy
+      end
 
     end
 
