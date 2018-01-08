@@ -106,8 +106,6 @@
   background-color: #a92f29;
   border-color: #a92f29;
 }
-
-
 .chatroom .panel-heading a {
   color: black;
   font-size: 16px;
@@ -115,6 +113,31 @@
 }
 .chatroom .panel-body{
   color: black;
+}
+.chatroom .panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.chatroom .panel-default > .panel-heading {
+  color: #ffffff;
+  background-color: #224b6f;
+  border-color: #224b6f;
+}
+
+.chatroom .panel-heading .btn {
+  display: inline-block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  border-color: transparent;
+  border-radius: 0px;
+  background-color: #1973b6;
+  outline: none;
 }
 .quick_phrases .panel-title a{
   font-size: 16px;
