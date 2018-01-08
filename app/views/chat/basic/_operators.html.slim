@@ -27,6 +27,7 @@
             ul
               - users_online.each do |user|
                 li
+                  - puts "тут юзеры"
                   = link_to user.user_name, chat.conversations_path(user_id: user), remote: true, method: :post
 
 
