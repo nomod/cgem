@@ -11,7 +11,7 @@ module Chat
     include SessionsHelper
     include BasicHelper
 
-    layout 'application'
+    layout false
 
     private
 
