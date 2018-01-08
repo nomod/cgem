@@ -12,11 +12,15 @@ li
               .row
                 - if user.id == message.user_id
                   .user-sent
-                    - puts "#{conversation.sender.user_name}"
+                    - puts "#{conversation.user.user_name}"
+                   .message-sent
+                     = message.body
                 - else
                   .user-received
-                    - puts "#{conversation.recipient.user_name}"
-                .div class ="#{user.id == message.user_id ? 'message-sent' : 'message-received'}"
+                    - puts "#{conversation.opposed_user(user).user_name}"
+                  .message-received
+                    = message.body
+                /.div class ="#{user.id == message.user_id ? 'message-sent' : 'message-received'}"
                   = message.body
 
       form.new_message
