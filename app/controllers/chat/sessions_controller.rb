@@ -21,7 +21,7 @@ module Chat
     end
 
     def destroy
-      @operator = Chat::Operator.find_by(user_id: current_user.id)
+      @operator = Chat::Operator.find_by(user_id: current_user_chat.id)
       sign_out(@operator)
       redirect_to main_app.root_url
     end
