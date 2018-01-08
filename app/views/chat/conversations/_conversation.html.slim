@@ -14,16 +14,14 @@ li
                   .user-sent
                     - puts "равны"
                     - puts "#{user.id}"
-                    - puts "#{message.user_id}"
-                    - puts "#{conversation.recipient.user_name}"
+                    - puts "#{message.user}"
                   .message-sent
                     = message.body
                 - else
                   .user-received
                     - puts "не равны"
                     - puts "#{user.id}"
-                    - puts "#{message.user_id}"
-                    - puts "#{conversation.sender.user_name}"
+                    - puts "#{opposed_user(message.user)}"
                   .message-received
                     = message.body
                 /.div class ="#{user.id == message.user_id ? 'message-sent' : 'message-received'}"
