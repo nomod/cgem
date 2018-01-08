@@ -46,7 +46,7 @@ module Chat
       #обновляем поле updated_at в базе у юзера при активности
       current_user_chat.touch
       puts "тест 1"
-      UserOnlineJob.perform_later(all_operators, users_online)
+      Chat::UserOnlineJob.perform_later(all_operators, users_online)
       puts "тест 2"
     end
 
