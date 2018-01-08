@@ -19,7 +19,7 @@ module Chat
     def broadcast_to_operators(operator, users)
       puts "start broadcast_to_operators"
       ActionCable.server.broadcast(
-          "conversations-#{operator.id}",
+          "onlines-#{operator.id}",
           users: render_users(users)
       )
     end
