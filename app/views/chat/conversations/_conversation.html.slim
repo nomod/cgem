@@ -10,7 +10,7 @@ li
             //= render message, user: user
             li
               .row
-                - if current_user_chat.id == message.user_id
+                - if user.id == message.user_id
                   /.user-sent
                     - puts "равны"
                     - puts "#{current_user_chat.user_name}"
