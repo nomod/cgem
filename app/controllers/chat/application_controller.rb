@@ -6,8 +6,7 @@ module Chat
 
     protect_from_forgery with: :exception
 
-    before_action :check_session
-    before_action :user_activity
+    before_action :check_session, :user_activity, :online_info
     #before_action :current_url
 
     #after_action :welcome
@@ -50,9 +49,7 @@ module Chat
 
     def online_info
       puts "тест 1"
-      if user_activity
-        Chat::UserOnlineJob.perform_later(all_operators, users_online)
-      end
+      Chat::UserOnlineJob.perform_later(all_operators, users_online)
     end
 
     def current_url

@@ -52,9 +52,7 @@ module Chat
 
       def online_info
         puts "тест 1"
-        if user_activity
-          Chat::UserOnlineJob.perform_later(all_operators, users_online)
-        end
+        Chat::UserOnlineJob.perform_later(all_operators, users_online)
       end
 
     end
