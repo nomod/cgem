@@ -18,7 +18,7 @@ $(document).ready(function() {
                 var body = $('#select-quick-group');
                 body.append(
                     "<li>"+
-                        "<a data-remote='true' rel='nofollow' data-method='post' href='/quick_phrases?group_id="+value.id+"'>"+value.quick_group_name+"</a>"+
+                        "<a data-remote='true' rel='nofollow' data-method='post' href='/chat/quick_phrases?group_id="+value.id+"'>"+value.quick_group_name+"</a>"+
                     "</li>"+
                      "<div class = 'quick_phrases_list'></div>"
                 );
