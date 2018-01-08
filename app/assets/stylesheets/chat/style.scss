@@ -7,6 +7,10 @@
   margin-bottom: 10px;
   line-height: 1.428571429;
 }
+.chatroom .row {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
 .chatroom ul {
   list-style: none;
   margin: 0px;
@@ -107,12 +111,13 @@
   border-color: #a92f29;
 }
 .chatroom .panel-heading a {
-  color: black;
+  color: white;
   font-size: 16px;
   font-weight: bold;
 }
 .chatroom .panel-body{
   color: black;
+  background-color: #f2f2f2;
 }
 .chatroom .panel-heading {
   padding: 10px 15px;
@@ -125,7 +130,22 @@
   background-color: #224b6f;
   border-color: #224b6f;
 }
-
+.chatroom .new_message .btn{
+  display: inline-block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  border-color: transparent;
+  border-radius: 0px;
+  background-color: #224b6f;
+  outline: none;
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: bold;
+}
 .chatroom .panel-heading .btn {
   display: inline-block;
   -moz-box-sizing: border-box;
@@ -136,7 +156,7 @@
   color: #fff;
   border-color: transparent;
   border-radius: 0px;
-  background-color: #1973b6;
+  background-color: #224b6f;
   outline: none;
 }
 .quick_phrases .panel-title a{
