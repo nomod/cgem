@@ -123,6 +123,8 @@
 .chatroom .panel-default {
   webkit-box-shadow: 2px 3px 9px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 2px 3px 9px 0px rgba(0, 0, 0, 0.25);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .chatroom .panel-heading {
   padding: 10px 15px;

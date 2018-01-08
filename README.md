@@ -32,7 +32,8 @@ In Connection:
 In ApplicationController:
 
       helper Chat::Engine.helpers
-      before_action :current_user_chat, :check_session, :user_activity, :online_info
+      before_action :current_user_chat, :check_session, :user_activity
+      after_action :online_info
     
 In routes:
     
