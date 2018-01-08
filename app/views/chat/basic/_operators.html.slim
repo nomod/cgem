@@ -7,7 +7,7 @@
   - if !current_user_chat.nil?
     - if !current_user_chat.operator?
       - if !all_operators.blank?
-        .chatroom_user
+        .chatroom_user.operator_online
           .panel.panel-primary
             .panel-heading
               h3.panel-title
@@ -18,14 +18,15 @@
                   li
                     = link_to operator.user_name, chat.conversations_path(user_id: operator), remote: true, method: :post
     - else
-      .chatroom_user
+      .chatroom_user.user_online
         .panel.panel-primary
           .panel-heading
             h3.panel-title
               | Пользователи онлайн
           .panel-body
             ul
-              - users_online.each do |user|
+              = render 'chat/users/online', users: users_online
+              /- users_online.each do |user|
                 li
                   = link_to user.user_name, chat.conversations_path(user_id: user), remote: true, method: :post
 

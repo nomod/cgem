@@ -45,6 +45,7 @@ module Chat
     def user_activity
       #обновляем поле updated_at в базе у юзера при активности
       current_user_chat.touch
+      UserOnlineJob.perform_later(users_online)
     end
 
     def current_url
