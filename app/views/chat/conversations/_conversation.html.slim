@@ -19,7 +19,7 @@ li
                 - else
                   .user-received
                     - puts "не равны"
-                    - puts "#{message.conversation.opposed_user(message.user).user_name}"
+                    - puts "#{conversation.opposed_user(user).user_name}"
                   .message-received
                     = message.body
                 /.div class ="#{user.id == message.user_id ? 'message-sent' : 'message-received'}"
