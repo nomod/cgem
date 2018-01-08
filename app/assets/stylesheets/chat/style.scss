@@ -72,7 +72,7 @@
 }
 .chatroom_user .panel {
   margin-bottom: 20px;
-  background-color: #90666624;
+  background-color: #ececec;
   border: 1px solid transparent;
   border-radius: 10px;
   -webkit-box-shadow: 2px 3px 9px 0px rgba(0, 0, 0, 0.25);
@@ -118,6 +118,10 @@
 .chatroom .panel-body{
   color: black;
   background-color: #f2f2f2;
+}
+.chatroom .panel-default {
+  webkit-box-shadow: 2px 3px 9px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 3px 9px 0px rgba(0, 0, 0, 0.25);
 }
 .chatroom .panel-heading {
   padding: 10px 15px;
