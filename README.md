@@ -12,28 +12,29 @@ In application.css:
 
 In Connection:
 
-    identified_by :current_user
+    identified_by :current_user_chat
 
     def connect
-      self.current_user = find_verified_user
+      self.current_user_chat = find_verified_user
     end
 
     protected
 
     def find_verified_user
-      remember_token = Digest::SHA1.hexdigest(cookies[:remember_token].to_s)
-      if @current_user.nil?
-        @current_user = Chat::User.find_by(remember_token: remember_token)
+      remember_token = Digest::SHA1.hexdigest(cookies[:chat_token].to_s)
+      if @current_user_chat.nil?
+        @current_user_chat = Chat::User.find_by(chat_token: remember_token)
       else
-        @current_user
+        @current_user_chat
       end
     end
 
 In ApplicationController:
 
       helper Chat::Engine.helpers
-      before_action :check_session
       before_action :current_user_chat
+      before_action :check_session
+      before_action :user_activity
     
 In routes:
     
