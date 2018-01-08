@@ -3,7 +3,7 @@ li
     .panel-heading
       = link_to conversation.opposed_user(user).user_name, '', class: 'toggle-window'
       /= link_to 'x', chat.close_conversation_path(conversation), class: 'btn btn-default btn-xs pull-right', remote: true, method: :post
-      = a.btn.btn-default.btn-xs.pull-right data-method='post' data-remote='true' href="/chat/conversations/#{conversation}/close" rel='nofollow' x
+      = a.btn.btn-default.btn-xs.pull-right data-method='post' data-remote='true' href="/chat/conversations/#{conversation.id}/close" rel='nofollow' x
     .panel-body style=('display: none;')
       .messages-list
         ul
