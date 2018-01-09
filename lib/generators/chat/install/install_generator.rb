@@ -38,8 +38,8 @@ module Chat
       def add_chat_status_migration
         migration_template "chat_users.rb", "db/migrate/chat_users.rb"
         migration_template "chat_operators.rb", "db/migrate/chat_operators.rb"
-        migration_template "chat_messages.rb", "db/migrate/chat_messages.rb"
         migration_template "chat_conversations.rb", "db/migrate/chat_conversations.rb"
+        migration_template "chat_messages.rb", "db/migrate/chat_messages.rb"
         migration_template "chat_quick_phrases.rb", "db/migrate/chat_quick_phrases.rb"
         migration_template "chat_quick_groups.rb", "db/migrate/chat_quick_groups.rb"
       end
