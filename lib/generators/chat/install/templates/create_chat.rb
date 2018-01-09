@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreateChat < ActiveRecord::Migration[5.1]
+class CreateChat < ActiveRecord::Migration[5.0]
 
   def chat_users
     create_table :chat_users do |t|
