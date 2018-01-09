@@ -19,7 +19,7 @@ module Chat
       operator.update_attribute(:status, true)
 
       #если есть ли куки от юзера не оператора, удаляем его
-      if @current_user_chat
+      if !@current_user_chat.operator?
         @current_user_chat.destroy
       end
 

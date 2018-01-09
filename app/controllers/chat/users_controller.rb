@@ -31,7 +31,8 @@ module Chat
         @operator = Operator.new(user_id: @user.id, email: params[:email], password: params[:password])
 
         if @operator.save
-          redirect_to operator_signin_path
+          sign_in(@user, @operator)
+          redirect_to main_app.root_path
         end
 
       else
