@@ -28,11 +28,12 @@ class CreateChat < ActiveRecord::Migration[5.0]
     create_table :chat_messages do |t|
       t.text :body
       t.integer :user_id
-      t.references :chat_conversation, foreign_key: true
+      t.references :conversation, foreign_key: true
 
       t.timestamps
     end
   end
+  
 
   def chat_conversations
     create_table :chat_conversations do |t|
