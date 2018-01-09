@@ -2,11 +2,11 @@
 Short description and motivation.
 
 ## Usage
-In application.js:
+Require chat in your app/assets/javascripts/application.js file:
 
     //= require chat/application
 
-In application.css:
+Require chat in your app/assets/stylesheets/application.css file:
     
     *= require chat/application
 
@@ -29,15 +29,10 @@ In Connection:
       end
     end
 
-In ApplicationController:
+Run the installer to setup migrations and helpers and then migrate:
 
-      helper Chat::Engine.helpers
-      before_action :current_user_chat, :check_session, :user_activity
-      after_action :online_info
-    
-In routes:
-    
-    mount Chat::Engine, at: '/chat'
+    ❯ rails generate chat:install
+    ❯ rails db:migrate
     
 In application.html.slim:
     
