@@ -16,7 +16,21 @@ module Chat
         after = "class ApplicationController < ActionController::Base\n"
         inject_into_file file, after: after do
           "  helper Chat::Engine.helpers\n"
+        end
+      end
+
+      def add_before
+        file = "app/controllers/application_controller.rb"
+        after = "class ApplicationController < ActionController::Base\n"
+        inject_into_file file, after: after do
           "  before_action :current_user_chat, :check_session, :user_activity\n"
+        end
+      end
+
+      def add_after
+        file = "app/controllers/application_controller.rb"
+        after = "class ApplicationController < ActionController::Base\n"
+        inject_into_file file, after: after do
           "  after_action :online_info\n"
         end
       end
