@@ -10,9 +10,6 @@ module Chat
       @all_operators = Chat::User.where(id: @all_operators_id)
       @users = Chat::User.where(id: users_online)
 
-      puts "all_operators: #{@all_operators}"
-      puts "users_online: #{@users}"
-
       @all_operators.each do |operator|
         broadcast_to_operators(operator, @users)
       end
