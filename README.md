@@ -2,6 +2,9 @@
 Short description and motivation.
 
 ## Usage
+
+    Need: 'rails', '~> 5.0.6'
+
 Require chat in your app/assets/javascripts/application.js file:
 
     //= require chat/application
