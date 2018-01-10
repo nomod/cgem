@@ -1,4 +1,3 @@
 - users.each do |user|
   li
-    - puts "тут юзеры онлайн"
     = link_to user.user_name, "/chat/conversations?user_id=#{user.id}", remote: true, method: :post

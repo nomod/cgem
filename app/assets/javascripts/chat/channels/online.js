@@ -4,7 +4,6 @@ App.chat_online = App.cable.subscriptions.create("Chat::OnlineChannel", {
     received: function(data) {
 
         var user_online = $('.user_online');
-        console.log('ТУТ ВСТАВКА');
         user_online.find('ul').empty();
         user_online.find('ul').append(data['users']);
 
