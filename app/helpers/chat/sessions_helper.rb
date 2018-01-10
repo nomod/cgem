@@ -20,6 +20,7 @@ module Chat
 
       #если есть ли куки от юзера не оператора, удаляем его
       if !@current_user_chat.operator?
+        puts "удалить: #{@current_user_chat.user_name}"
         @current_user_chat.destroy
       end
 
