@@ -6,7 +6,7 @@ module Chat
     def perform(all_operators, users_online)
       puts "start UserOnlineJob"
 
-      @all_operators_id = Chat::Operator.where(user_id: all_operators)
+      @all_operators_id = Chat::Operator.where(id: all_operators).pluck(:user_id)
       @all_operators = Chat::User.where(id: @all_operators_id)
       @users = Chat::User.where(id: users_online)
 
