@@ -5,11 +5,13 @@ module Chat
 
     def perform(all_operators, users_online)
       puts "start UserOnlineJob"
-      puts "all_operators: #{all_operators}"
-      puts "users_online: #{users_online}"
 
-      @all_operators = Chat::User.where(id: all_operators)
+      @all_operators_id = Operator::User.where(user_id: all_operators)
+      @all_operators = User::User.where(id: @all_operators_id)
       @users = Chat::User.where(id: users_online)
+
+      puts "all_operators: #{@all_operators.id}"
+      puts "users_online: #{@users.id}"
 
       @all_operators.each do |operator|
         broadcast_to_operators(operator, @users)
